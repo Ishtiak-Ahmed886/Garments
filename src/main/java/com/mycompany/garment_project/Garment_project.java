@@ -162,6 +162,23 @@ import java.util.List;
     }
 }
 
+ class Supplier {
+    public String id;
+    public String name;
+    public String contactInfo;
+  
+
+    public void addFabric(Fabric fabric) {
+        suppliedFabrics.add(fabric);
+    }
+
+    public List<Fabric> getSuppliedFabrics() {
+        return suppliedFabrics;
+    }
+}
+
+
+
 public class Garment_project {
 
     public static void main(String[] args) {
