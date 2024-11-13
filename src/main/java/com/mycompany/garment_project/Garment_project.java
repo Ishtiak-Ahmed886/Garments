@@ -5,6 +5,7 @@
 package com.mycompany.garment_project;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
  class Garment {
@@ -97,6 +98,37 @@ import java.util.List;
             }
         }
         return null;
+    }
+}
+ class Order {
+    public String orderId;
+    public Date orderDate;
+    public List<Garment> garments;
+    public double totalAmount;
+
+  
+
+    public void addGarment(Garment garment) {
+        garments.add(garment);
+        calculateTotalAmount();
+    }
+
+    public double calculateTotalAmount() {
+        totalAmount = 0;
+        for (Garment garment : garments) {
+            totalAmount += garment.calculateDiscountPrice(0);
+        }
+        return totalAmount;
+    }
+
+    public void printOrderDetails() {
+        System.out.println("Order ID: " + orderId);
+        System.out.println("Order Date: " + orderDate);
+        System.out.println("Total Amount: $" + totalAmount);
+        System.out.println("Garments in Order:");
+        for (Garment garment : garments) {
+            System.out.println(" - " + garment.id + ": " + garment.name);
+        }
     }
 }
 
