@@ -78,7 +78,9 @@ import java.util.List;
  class Inventory {
     public List<Garment> garments;
 
-   
+    public Inventory() {
+        this.garments = new ArrayList<>();
+    }
 
     public void addGarment(Garment garment) {
         garments.add(garment);
