@@ -60,7 +60,13 @@ import java.util.List;
     public String phone;
     public List<Order> orders;
 
-  
+    public Customer(String customerId, String name, String email, String phone) {
+        this.customerId = customerId;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.orders = new ArrayList<>();
+    }
     public void placeOrder(Order order) {
         orders.add(order);
     }
