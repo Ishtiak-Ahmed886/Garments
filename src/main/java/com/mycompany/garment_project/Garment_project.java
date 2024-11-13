@@ -4,6 +4,9 @@
 
 package com.mycompany.garment_project;
 
+import java.util.ArrayList;
+import java.util.List;
+
  class Garment {
     public String id;
     public String name;
@@ -48,6 +51,22 @@ package com.mycompany.garment_project;
 
     public double calculateCost(double meters) {
         return pricePerMeter * meters;
+    }
+}
+ class Customer {
+    public String customerId;
+    public String name;
+    public String email;
+    public String phone;
+    public List<Order> orders;
+
+  
+    public void placeOrder(Order order) {
+        orders.add(order);
+    }
+
+    public List<Order> viewOrders() {
+        return orders;
     }
 }
 
