@@ -135,7 +135,32 @@ import java.util.List;
         }
     }
 }
+ class RMGSystem {
+    public static void main(String[] args) {
+        Fabric cotton = new Fabric("F1", "Cotton", "White", 10.0);
+        Fabric polyester = new Fabric("F2", "Polyester", "Blue", 8.0);
 
+        Supplier supplier = new Supplier("S1", "Fabric Supplier Co.", "contact@fabricco.com");
+        supplier.addFabric(cotton);
+        supplier.addFabric(polyester);
+
+        Garment tshirt = new Garment("G1", "T-shirt", "Comfortable cotton t-shirt", "M", "White", 15.0, 50, cotton);
+        Garment pants = new Garment("G2", "Pants", "Stylish blue polyester pants", "L", "Blue", 25.0, 30, polyester);
+
+        Inventory inventory = new Inventory();
+        inventory.addGarment(tshirt);
+        inventory.addGarment(pants);
+
+        Customer customer = new Customer("C1", "John Doe", "johndoe@example.com", "123-456-7890");
+
+        Order order = new Order("O1", new Date());
+        order.addGarment(tshirt);
+        order.addGarment(pants);
+
+        customer.placeOrder(order);
+        order.printOrderDetails();
+    }
+}
 
 public class Garment_project {
 
