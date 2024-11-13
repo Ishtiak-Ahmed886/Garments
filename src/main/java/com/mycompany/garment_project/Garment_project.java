@@ -75,6 +75,28 @@ import java.util.List;
         return orders;
     }
 }
+ class Inventory {
+    public List<Garment> garments;
+
+   
+
+    public void addGarment(Garment garment) {
+        garments.add(garment);
+    }
+
+    public void removeGarment(String id) {
+        garments.removeIf(g -> g.id.equals(id));
+    }
+
+    public Garment findGarment(String id) {
+        for (Garment garment : garments) {
+            if (garment.id.equals(id)) {
+                return garment;
+            }
+        }
+        return null;
+    }
+}
 
 
 public class Garment_project {
