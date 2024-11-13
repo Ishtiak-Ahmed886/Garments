@@ -33,7 +33,18 @@ package com.mycompany.garment_project;
         return price - (price * discountPercentage / 100);
     }
 }
+  class Fabric {
+    public String id;
+    public String type;
+    public String color;
+    public double pricePerMeter;
 
+  
+
+    public double calculateCost(double meters) {
+        return pricePerMeter * meters;
+    }
+}
 
 
 public class Garment_project {
