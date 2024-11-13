@@ -106,7 +106,11 @@ import java.util.List;
     public List<Garment> garments;
     public double totalAmount;
 
-  
+    public Order(String orderId, Date orderDate) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.garments = new ArrayList<>();
+    }
 
     public void addGarment(Garment garment) {
         garments.add(garment);
