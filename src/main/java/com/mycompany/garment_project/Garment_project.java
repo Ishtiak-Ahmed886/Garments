@@ -166,7 +166,14 @@ import java.util.List;
     public String id;
     public String name;
     public String contactInfo;
-  
+    public List<Fabric> suppliedFabrics;
+
+    public Supplier(String id, String name, String contactInfo) {
+        this.id = id;
+        this.name = name;
+        this.contactInfo = contactInfo;
+        this.suppliedFabrics = new ArrayList<>();
+    }
 
     public void addFabric(Fabric fabric) {
         suppliedFabrics.add(fabric);
